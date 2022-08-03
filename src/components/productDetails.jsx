@@ -4,6 +4,7 @@ class ProductDetails extends Component {
   handleSave = () => {
     // Navigate to /products.push
     this.props.history.push('/products');
+   // use this for the login this.props.history.replce('/products');
   };
 
   render() {
