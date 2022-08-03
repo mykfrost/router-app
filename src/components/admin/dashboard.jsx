@@ -8,8 +8,8 @@ const Dashboard = ({ match }) => {
     <div>
       <h1>Admin Dashboard</h1>
       <Sidebar/>
-      <Route path="/admi/users" component={Users}/>
-      <Route path="/admi/posts" component={Posts}/>
+      <Route path="/admin/users" component={Users}/>
+      <Route path="/admin/posts" component={Posts}/>
     </div>
   );
 };
