@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import NavBar from "./components/navbar";
-import { Route } from "react-router-dom";
+import { Route ,Switch, Redirect} from "react-router-dom";
 import Products from "./components/products";
 import Posts from "./components/posts";
 import Home from "./components/home";
-import { Switch } from "react-router-dom";
 import Dashboard from "./components/admin/dashboard";
 import ProductDetails from "./components/productDetails";
 import NotFound from "./components/notFound";
@@ -21,7 +20,11 @@ class App extends Component {
           <Route path="/products" render={(props)=> <Products sortBy="newest" {...props}/>}/>
           <Route path="/posts/:year?/:month?" component={Posts}/>
           <Route path="/admin" component={Dashboard}/>
+          <Redirect from="/messages" to="/posts"/>
+          <Route path="/not-found" component={NotFound}/>
           <Route path="/" exact component={Home}/>
+          
+          <Redirect to="/not-found" /> 
           </Switch>
           </div>
         <NavBar />
